@@ -1,0 +1,47 @@
+﻿@model Pizza
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1>Modifica una pizza</h1>
+            <div class="card mx-2 mt-2">
+                <form asp-controller="Pizza" asp-action="Update" method="post">
+                    @Html.AntiForgeryToken()
+                    <div class="ml-2 mt-2">
+                        <strong>Immagine:</strong>
+                        <input asp-for="Image" class="d-block w-25" />
+                        <span asp-validation-for="Image" class="text-danger"></span>
+                    </div>                 
+                    <div class="card-body">
+                        <div>
+                            <strong>Nome:</strong>
+                            <input asp-for="Name" class="d-block w-50" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        
+                        <div>
+                            <strong>Descrizione:</strong>
+                            <textarea asp-for="Description" class="d-block w-75 h-50"></textarea>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>                     
+                    </div>
+                    <div class="card-footer">
+                        <strong>Prezzo:</strong>
+                        <input asp-for="Price" class="d-block w-25" />
+                        <span asp-validation-for="Price" class="text-danger"></span>
+
+                        <div class="mt-2">
+                            <input type="submit" class="btn btn-primary" value="Salva">
+                        </div>
+                    </div>                   
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .ml-2 {
+        margin-left: 17px;
+    }
+</style>
